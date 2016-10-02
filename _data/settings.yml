@@ -1,0 +1,79 @@
+#-------------------------------
+# General Site Settings
+
+title: Xin Xu (Julia)
+description: Thinker / Designer / Traveller
+email: xin.xu3@duke.edu
+
+# NOTE: The Logo and Background image are defined in the all.sass document.
+
+menu:
+- {name: About Me, url: '#about-me'}
+- {name: Project, url: '#work'}  ## change url
+- {name: Blog, url: '#clients'}
+- {name: Contact, url: '#contact'}
+
+#-------------------------------
+# SEO Section
+
+# NOTE: Providing SEO information will make this website more searchable on the internet.
+
+seo:
+  description: 'Provide a description for your website to make it visible to search engines.'
+  rel-author: 'https://plus.google.com/u/0/+DevTipsForDesigners/'
+  rel-publisher: 'https://plus.google.com/u/0/+DevTipsForDesigners/'
+
+#-------------------------------
+# Google Analytics Section
+
+# Analytics helps you understand who visits your website.
+# Learn more at: http://support.google.com/analytics/answer/1008065
+
+# NOTE: If you want to use Google Analytics for basic web tracking: Just uncomment and enter your UA-Code here.
+
+#google-analytics-ua: UA-XXXXXX-X
+
+#-------------------------------
+# About Section
+
+# NOTE: The avatar is defined in the all.sass document.
+
+blurb: >
+  **I specializes in exploring insights** from data.
+  Related Projects can be found on [my github](https://github.com/SheliaXin){:target="_blank"}.
+
+
+skills:
+- {name: Bayesian Statistics, value: '8'}
+- {name: R, value: '9'}
+- {name: Predictive Modeling, value: '8'}
+- {name: Python, value: '7'}
+- {name: Machine Learning, value: '8'}
+- {name: SQL, value: '7'}
+- {name: Data Mining, value: '7'}
+- {name: Hadoop, value: '5'}
+
+#-------------------------------
+# Work Section
+
+projects:
+- {name: TYPO International Design Talks, folder: 'proj-1', file: 'work/proj-1.html'}
+- {name: City-IN website concept, folder: 'proj-2', file: 'work/proj-2.html'}
+- {name: Crispy Icons, folder: 'proj-3', file: 'work/proj-3.html'}
+- {name: Flat Mobile UI/UX Concept, folder: 'proj-4', file: 'work/proj-4.html'}
+- {name: Fresh It Up, folder: 'proj-5', file: 'work/proj-5.html'}
+- {name: Timeline Page, folder: 'proj-6', file: 'work/proj-6.html'}
+- {name: Weather Dashboard, folder: 'proj-7', file: 'work/proj-7.html'}
+- {name: Stripes & Co, folder: 'proj-8', file: 'work/proj-8.html'}
+
+#-------------------------------
+# Contact Section
+
+social:
+- {icon: 'linkedin', link: 'https://www.linkedin.com/in/xin-julia-xu'}
+- {icon: 'github', link: 'https://github.com/SheliaXin'}
+- {icon: 'facebook', link: 'https://www.facebook.com/xin.xu.9674'}
+- {icon: 'twitter', link: 'https://twitter.com/CodingJulia'}
+
+
+# social network icons available: 'twitter' / 'facebook' / 'github' / 'pinterest' 'google-plus' / 'linkedin' / 'youtube' / 'instagram' / 'dribbble' / 'behance' / 'soundcloud' / 'vine'

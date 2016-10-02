@@ -1,0 +1,19 @@
+# Layout settings
+
+animation: "bounceOut"
+
+# Images
+
+logo: "logo.svg"
+hero: "bg.jpg"
+avatar: "Xin.jpg"
+
+# Colors
+
+#accent: "#c99065"
+accent: "#103d6f"
+
+textColor: "#666"
+headlineColor: "#333"
+bgcolor: "#e5eaee"
+documentBackgroundColor: "#fff"
