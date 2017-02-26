@@ -611,7 +611,7 @@ header, footer {
 
 header {
   background-position: 30px 20px, 50% 50%;
-  background-image: url(../img/), url(../img/bg.jpg);
+  background-image: url(../img/), url(../img/bg.JPG);
   padding-bottom: 50px; }
   header .logo {
     height: 50px;
@@ -658,7 +658,7 @@ header {
     header h1 {
       padding-top: 0px; } }
 footer {
-  background-image: url(../img/), url(../img/bg.jpg); }
+  background-image: url(../img/), url(../img/bg.JPG); }
   footer .lockup {
     padding: 50px 30px; }
     footer .lockup:after {
@@ -982,7 +982,7 @@ footer {
     left: 0px; }
   .work-container h4 {
     margin-left: 60px; } }
-.section-clients {
+.section-projects {
   position: relative; }
 
 .clients-belt {
@@ -1222,7 +1222,7 @@ footer {
   font-size: 72px;
   font-weight: 300;
   line-height: 1;
-  width: 90%;
+  width: 70%;
   margin: 0 auto; }
 
 form {

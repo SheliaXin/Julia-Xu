@@ -9,8 +9,8 @@ email: xin.xu3@duke.edu
 
 menu:
 - {name: About Me, url: '#about-me'}
-- {name: Project, url: '#work'}  ## change url
-- {name: Blog, url: '#clients'}
+- {name: Blog, url: '#posts'}
+- {name: Project, url: '#projects'}  ## change url
 - {name: Contact, url: '#contact'}
 
 #-------------------------------
