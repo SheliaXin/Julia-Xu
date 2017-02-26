@@ -540,20 +540,20 @@ hr {
 /* Links
  * ------------------------------------	 */
 a {
-  color: #103d6f;
+  color: #001A57;
   text-decoration: none;
   outline: 0; }
 
 a:hover, a:focus {
-  color: #1d6ec8; }
+  color: #0038bd; }
 
 /* Selection colors (easy to forget)
  * ------------------------------------	 */
 ::selection {
-  background: #3687e2; }
+  background: #0048f0; }
 
 ::-moz-selection {
-  background: #3687e2; }
+  background: #0048f0; }
 
 img::selection {
   background: transparent; }
@@ -562,7 +562,7 @@ img::-moz-selection {
   background: transparent; }
 
 body {
-  -webkit-tap-highlight-color: #3687e2; }
+  -webkit-tap-highlight-color: #0048f0; }
 
 /* Basic Styles
  * ------------------------------------	 */
@@ -580,7 +580,7 @@ svg {
   width: 100%; }
 
 h3 {
-  color: #0c32ac;
+  color: #00098f;
   text-align: center;
   padding: 100px 0 30px; }
 
@@ -596,7 +596,7 @@ section:nth-child(odd) {
   background: #e5eaee;
   padding-bottom: 100px; }
   section:nth-child(odd) h3 {
-    color: #08247c; }
+    color: #00065c; }
 
 h3, header nav a, header .kicker, footer .lockup .content-wrap a {
   font-size: 14px;
@@ -611,7 +611,7 @@ header, footer {
 
 header {
   background-position: 30px 20px, 50% 50%;
-  background-image: url(../img/logo.svg), url(../img/bg.jpg);
+  background-image: url(../img/), url(../img/bg.jpg);
   padding-bottom: 50px; }
   header .logo {
     height: 50px;
@@ -658,7 +658,7 @@ header {
     header h1 {
       padding-top: 0px; } }
 footer {
-  background-image: url(../img/logo.svg), url(../img/bg.jpg); }
+  background-image: url(../img/), url(../img/bg.jpg); }
   footer .lockup {
     padding: 50px 30px; }
     footer .lockup:after {
@@ -666,10 +666,11 @@ footer {
       display: table;
       clear: both; }
     footer .lockup .content-wrap {
-      float: left;
+      float: right;
       margin-left: 80px; }
       footer .lockup .content-wrap .copyright {
-        margin: 0;
+        float: right;
+        margin-right: 30px;
         text-transform: uppercase;
         font-size: 12px;
         color: rgba(0, 0, 0, 0.4); }
@@ -728,7 +729,7 @@ footer {
     background: #e5eaee;
     border-radius: 50%; }
     .face-lockup [class^="icon-"] path {
-      fill: #103d6f; }
+      fill: #001A57; }
     .face-lockup [class^="icon-"].icon-stat {
       -webkit-box-ordinal-group: 1;
       -moz-box-ordinal-group: 1;
@@ -737,7 +738,7 @@ footer {
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1; }
-    .face-lockup [class^="icon-"].icon-mouse {
+    .face-lockup [class^="icon-"].icon-coding {
       -webkit-box-ordinal-group: 2;
       -moz-box-ordinal-group: 2;
       box-ordinal-group: 2;
@@ -745,7 +746,7 @@ footer {
       -moz-order: 2;
       order: 2;
       -ms-flex-order: 2; }
-    .face-lockup [class^="icon-"].icon-pencil {
+    .face-lockup [class^="icon-"].icon-mouse {
       -webkit-box-ordinal-group: 4;
       -moz-box-ordinal-group: 4;
       box-ordinal-group: 4;
@@ -753,7 +754,7 @@ footer {
       -moz-order: 4;
       order: 4;
       -ms-flex-order: 4; }
-    .face-lockup [class^="icon-"].icon-video {
+    .face-lockup [class^="icon-"].icon-pencil {
       -webkit-box-ordinal-group: 5;
       -moz-box-ordinal-group: 5;
       box-ordinal-group: 5;
@@ -779,7 +780,7 @@ footer {
   max-width: 620px;
   padding: 0 20px;
   margin: 50px auto;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   font-weight: 300; }
 
@@ -801,7 +802,7 @@ footer {
       display: inline-block;
       height: 14px;
       width: 14px;
-      background-color: #103d6f;
+      background-color: #001A57;
       margin-right: 8px;
       border-radius: 50%; }
       .skill-lockup .skill-icons span:after {
@@ -931,7 +932,7 @@ footer {
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex;
-      background: rgba(16, 61, 111, 0.9);
+      background: rgba(0, 26, 87, 0.9);
       text-align: center; }
       .thumb-container label .thumb-overlay strong {
         display: block;
@@ -954,7 +955,7 @@ footer {
   position: relative;
   display: none; }
   .work-container h4, .work-container noscript h4 {
-    color: #103d6f;
+    color: #001A57;
     font-weight: 300;
     text-transform: uppercase;
     font-size: 28px;
@@ -1061,7 +1062,7 @@ footer {
     opacity: 0.5; }
     .clients-logos .client-logo.active-client {
       opacity: 1;
-      border-bottom: 4px solid #103d6f; }
+      border-bottom: 4px solid #001A57; }
 
 .client-quote-mark {
   position: absolute;
@@ -1072,7 +1073,7 @@ footer {
   z-index: -1;
   opacity: 0.3; }
   .client-quote-mark path {
-    fill: #103d6f; }
+    fill: #001A57; }
 
 .client-controls {
   position: absolute;
@@ -1087,7 +1088,7 @@ footer {
     margin-top: -20px;
     cursor: pointer; }
     .client-controls > div path {
-      fill: #103d6f; }
+      fill: #001A57; }
   .client-controls .client-control-next {
     position: absolute;
     top: 50%;
@@ -1111,7 +1112,7 @@ footer {
     margin: 0px 10px;
     cursor: pointer; }
     .clients-mobile-nav span.active-client {
-      border-color: #103d6f; }
+      border-color: #001A57; }
 
 @media (max-width: 850px) {
   .clients-logos {
@@ -1178,11 +1179,11 @@ footer {
   flex-wrap: wrap; }
   .social-links a {
     display: block;
-    border: 2px solid #103d6f;
+    border: 2px solid #001A57;
     height: 50px;
     width: 50px;
     line-height: 50px;
-    color: #103d6f;
+    color: #001A57;
     border-radius: 50%;
     font-size: 28px;
     margin: 20px;
@@ -1195,7 +1196,7 @@ footer {
       right: 0px;
       bottom: 0px;
       left: 0px;
-      border: 2px solid #103d6f;
+      border: 2px solid #001A57;
       border-radius: 50%;
       margin: -2px;
       opacity: 1;
@@ -1213,7 +1214,7 @@ footer {
 .bar {
   width: 250px;
   height: 0px;
-  border-top: 4px solid #103d6f;
+  border-top: 4px solid #001A57;
   margin: 0px auto 50px; }
 
 .biglink {
@@ -1229,7 +1230,7 @@ form {
   margin: 0 auto 100px;
   padding: 0 20px; }
   form input, form textarea {
-    border: 3px solid #103d6f;
+    border: 3px solid #001A57;
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1241,20 +1242,20 @@ form {
     font-size: 16px; }
     form input:focus, form textarea:focus {
       outline: none;
-      border-color: #0c32ac; }
+      border-color: #00098f; }
   form textarea {
     height: 10em;
     resize: none; }
   form .submit-wrap {
     text-align: right; }
   form [type="submit"] {
-    background: #103d6f;
+    background: #001A57;
     color: white;
     font-size: 18px;
     text-transform: uppercase;
     width: 33%; }
     form [type="submit"]:hover {
-      background: #0c32ac; }
+      background: #00098f; }
   form .contact-info-group label {
     width: 50%;
     float: left;

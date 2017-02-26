@@ -4,14 +4,12 @@ animation: "bounceOut"
 
 # Images
 
-logo: "logo.svg"
+#logo: "logo.svg"
 hero: "bg.jpg"
 avatar: "Xin.jpg"
 
 # Colors
-
-#accent: "#c99065"
-accent: "#103d6f"
+accent: "#001A57"
 
 textColor: "#666"
 headlineColor: "#333"

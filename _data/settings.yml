@@ -1,8 +1,8 @@
 #-------------------------------
 # General Site Settings
 
-title: Xin Xu (Julia)
-description: Thinker / Designer / Traveller
+title: Xin (Julia) Xu
+description: Data Scientist / Bayesian / Traveller
 email: xin.xu3@duke.edu
 
 # NOTE: The Logo and Background image are defined in the all.sass document.
@@ -39,16 +39,17 @@ seo:
 # NOTE: The avatar is defined in the all.sass document.
 
 blurb: >
+  I am a second-year Master student at Duke studying statistical science.
   **I specializes in exploring insights** from data.
   Related Projects can be found on [my github](https://github.com/SheliaXin){:target="_blank"}.
 
 
 skills:
-- {name: Bayesian Statistics, value: '8'}
+- {name: Statistics, value: '9'}
 - {name: R, value: '9'}
+- {name: Machine Learning, value: '9'}
+- {name: Python, value: '8'}
 - {name: Predictive Modeling, value: '8'}
-- {name: Python, value: '7'}
-- {name: Machine Learning, value: '8'}
 - {name: SQL, value: '7'}
 - {name: Data Mining, value: '7'}
 - {name: Hadoop, value: '5'}

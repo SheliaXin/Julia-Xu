@@ -5,7 +5,7 @@ permalink: pretty
 
 baseurl: /my-homepage
 
-port: 8000
+port: 5453
 
 include: ['_includes/work']
 exclude: ['the_design.psd']
