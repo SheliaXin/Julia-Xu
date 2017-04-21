@@ -6,10 +6,12 @@ animation: "bounceOut"
 
 #logo: "logo.svg"
 hero: "bg.JPG"
+postsbg: "postsbg.JPG"
 avatar: "Xin.jpg"
 
 # Colors
 accent: "#001A57"
+exaccent: "#5C6D94"
 
 textColor: "#666"
 headlineColor: "#333"

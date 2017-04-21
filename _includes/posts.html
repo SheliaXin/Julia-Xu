@@ -1,18 +1,21 @@
-<section, class="section-posts">
+<section class="section-posts">
 
 <h3 id="posts"> Recent Posts </h3>
-<hr class="bar-blog"> </hr>
-{% for post in site.categories['blog'] limit:3%}
 
-    <div class="post-header title">
-      <a href="{{post.url}}"><h1 class="post-title">{{ post.title }}</h1></a>
-    </div>
-    <div class="post-header date">
-      <p class="post-meta">{{ post.date | date: "%B %-d, %Y — %H:%M" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</p>
-    </div>
+<div class="posts-belt">
+  <ul>
+    {% for post in site.posts limit:3 %}
+    <li>
+      <div class="posts-name">
+      <a href = "{{site.baseurl}}{{post.url}}"> {{post.title}}</a>
+      </div>
+      <p>{{post.meta}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 
-{% endfor %}
-<hr class="bar-blog"> </hr>
-
-<h3 id="Blog"><a href="/posts"> More >> </a></h3>
+<nav>
+  <h3 id="Blog"><a href="{{site.baseurl}}blog"> More >> </a></h3>
+</nav>
 </section>

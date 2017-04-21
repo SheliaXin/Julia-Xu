@@ -2,41 +2,40 @@
 
   <h3 id="projects">Projects</h3>
 
-  <div class="clients-mobile-nav">
-    {% for client in site.data.settings.clients %}
-        <span class="client-button {% if forloop.first %}active-client{% endif %}"></span>
+  <div class="projects-mobile-nav">
+    {% for project in site.data.settings.projects %}
+        <span class="project-button {% if forloop.first %}active-project{% endif %}"></span>
     {% endfor %}
   </div>
 
-  <div class="clients-belt">
-    {% for client in site.data.settings.clients %}
-      <div class="client-unit {% if forloop.first %}active-client{% endif %}">
+  <div class="projects-belt">
+    {% for project in site.data.settings.projects %}
+      <div class="project-unit {% if forloop.first %}active-project{% endif %}">
 
-        <figure class="client-face">
-          <img src="assets/img/clients/{{ client.avatar }}" alt="client-face">
+        <figure class="project-face">
+          <img src="assets/img/projects/{{ project.avatar }}" alt="project-face">
           <figcaption>
-            <strong class="client-name">{{ client.name }}</strong>
-            <em class="client-title">{{ client.title }}</em>
+            <strong class="project-name">{{ project.name }}</strong>
+            <em class="project-title">{{ project.title }}</em>
           </figcaption>
         </figure>
 
-        <div class="client-content">
-          <div class="client-quote-mark">{% include icons/icon-quote-mark.html %}</div>
-          {{ client.quote }}
+        <div class="project-content">
+          {{ project.quote }}
         </div>
       </div>
     {% endfor %}
 
   </div>
 
-  <div class="client-controls">
-    <div class="client-control-next">{% include icons/icon-next.html %}</div>
-    <div class="client-control-prev">{% include icons/icon-prev.html %}</div>
+  <div class="project-controls">
+    <div class="project-control-next">{% include icons/icon-next.html %}</div>
+    <div class="project-control-prev">{% include icons/icon-prev.html %}</div>
   </div>
 
-  <div class="clients-logos">
-    {% for client in site.data.settings.clients %}
-        <img class="client-logo {% if forloop.first %}active-client{% endif %}" src="assets/img/clients/{{ client.logo }}" align="{{ client.logo }}">
+  <div class="projects-logos">
+    {% for project in site.data.settings.projects %}
+        <img class="project-logo {% if forloop.first %}active-project{% endif %}" src="assets/img/projects/{{ project.logo }}" align="{{ project.logo }}">
     {% endfor %}
   </div>
 

@@ -2,7 +2,7 @@ $(function() {
 	smoothScroll(300);
 	workBelt();
 	workLoad();
-	clientStuff();
+	projectStuff();
 
 	$("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
 	$(".biglink").fitText(1.5);
@@ -55,8 +55,8 @@ function  workLoad() {
         spinner = '<div class="loader">Loading...</div>',
         newHTML = 'work/'+ newFolder;
 
-    $('.project-load').html(spinner).load(newHTML);
-    $('.project-title').text(newTitle);
+  //  $('.project-load').html(spinner).load(newHTML);
+  //  $('.project-title').text(newTitle);
   });
 
 }
@@ -64,43 +64,43 @@ function  workLoad() {
 
 
 
-function clientStuff() {
+function projectStuff() {
 
-  $('.client-logo, .client-button').click(function() {
+  $('.project-logo, .project-button').click(function() {
     var $this = $(this),
         position = $this.parent().children().index($this);
 
-    $('.client-unit').removeClass('active-client').eq(position).addClass('active-client');
-    $('.client-logo').removeClass('active-client').eq(position).addClass('active-client');
-    $('.client-button').removeClass('active-client').eq(position).addClass('active-client');
+    $('.project-unit').removeClass('active-project').eq(position).addClass('active-project');
+    $('.project-logo').removeClass('active-project').eq(position).addClass('active-project');
+    $('.project-button').removeClass('active-project').eq(position).addClass('active-project');
   });
 
 
-  $('.client-control-next, .client-control-prev').click(function() {
+  $('.project-control-next, .project-control-prev').click(function() {
 
     var $this = $(this),
-        curActiveClient = $('.clients-belt').find('.active-client'),
-        position = $('.clients-belt').children().index(curActiveClient),
-        clientNum = $('.client-unit').length;
+        curActiveproject = $('.projects-belt').find('.active-project'),
+        position = $('.projects-belt').children().index(curActiveproject),
+        projectNum = $('.project-unit').length;
 
-      if($this.hasClass('client-control-next')) {
+      if($this.hasClass('project-control-next')) {
 
-        if(position < clientNum -1){
-          $('.active-client').removeClass('active-client').next().addClass('active-client');
+        if(position < projectNum -1){
+          $('.active-project').removeClass('active-project').next().addClass('active-project');
         } else {
-          $('.client-unit').removeClass('active-client').first().addClass('active-client');
-          $('.client-logo').removeClass('active-client').first().addClass('active-client');
-          $('.client-button').removeClass('active-client').first().addClass('active-client');
+          $('.project-unit').removeClass('active-project').first().addClass('active-project');
+          $('.project-logo').removeClass('active-project').first().addClass('active-project');
+          $('.project-button').removeClass('active-project').first().addClass('active-project');
         }
 
       } else {
 
         if (position === 0) {
-          $('.client-unit').removeClass('active-client').last().addClass('active-client');
-          $('.client-logo').removeClass('active-client').last().addClass('active-client');
-          $('.client-button').removeClass('active-client').last().addClass('active-client');
+          $('.project-unit').removeClass('active-project').last().addClass('active-project');
+          $('.project-logo').removeClass('active-project').last().addClass('active-project');
+          $('.project-button').removeClass('active-project').last().addClass('active-project');
         } else {
-          $('.active-client').removeClass('active-client').prev().addClass('active-client');
+          $('.active-project').removeClass('active-project').prev().addClass('active-project');
         }
 
       }
@@ -245,15 +245,15 @@ function clientStuff() {
 				$ta.css('resize', 'horizontal');
 			}
 
-			// The mirror width must exactly match the textarea width, so using getBoundingClientRect because it doesn't round the sub-pixel value.
-			// window.getComputedStyle, getBoundingClientRect returning a width are unsupported, but also unneeded in IE8 and lower.
+			// The mirror width must exactly match the textarea width, so using getBoundingprojectRect because it doesn't round the sub-pixel value.
+			// window.getComputedStyle, getBoundingprojectRect returning a width are unsupported, but also unneeded in IE8 and lower.
 			function setWidth() {
 				var width;
 				var style = window.getComputedStyle ? window.getComputedStyle(ta, null) : false;
 
 				if (style) {
 
-					width = ta.getBoundingClientRect().width;
+					width = ta.getBoundingprojectRect().width;
 
 					if (width === 0 || typeof width !== 'number') {
 						width = parseInt(style.width,10);

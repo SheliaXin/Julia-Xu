@@ -1,13 +1,12 @@
 # Build settings
-
 markdown: kramdown
 permalink: pretty
 
-baseurl: /my-homepage
+baseurl: /my-homepage/
 
 port: 5453
 
-include: ['_includes/work']
+include: ['_includes/blog']
 exclude: ['the_design.psd']
 
 sass:

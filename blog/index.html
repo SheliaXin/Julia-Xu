@@ -1,0 +1,14 @@
+---
+layout: postlayout
+headerClass: header-posts
+footerClass: footer-posts
+---
+
+<div class="postslist-belt">
+<ul>
+  {% for post in site.posts limit:3 %}
+    <h4><a href = "{{site.baseurl}}{{post.url}}"> {{post.title}}</a></h4>
+    <h5><p>{{post.meta}}</p></h5>
+  {% endfor %}
+</ul>
+</div>
