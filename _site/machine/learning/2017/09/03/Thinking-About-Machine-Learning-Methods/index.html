@@ -23,13 +23,61 @@
 </header>
 
 
-   <h3 class="post-title">Ensemble Methods - Stacking</h3>
-   <p class="post-date">2017-09-03 21:05:54 -0700</p>
-
    <article class="post-content">
-     <p>Ensemble methods generally used to combining the predictions of multiple machine learning models. It is widely used in Kaggle and most winners used it in their final models. This post is written when I am learning ensemble methods and using it in Zillow Price Competition. It includes several papers’ review and some of my understanding.</p>
+     <h3 class="post-title">Ensemble Methods - Stacking</h3>
+     <p class="post-date">2017-09-03 21:05:54 -0700</p>
+     <p>Ensemble methods generally used to combining the predictions of multiple machine learning models. It is widely used in Kaggle and most winners used it in their final models. This post is written when I am learning ensemble methods and using it in <a href="https://www.kaggle.com/c/zillow-prize-1">Zillow Price Competition</a>. It includes several papers’ review and some of my understanding.</p>
 
-<h4 id="introduction-of-stacking">1. Introduction of Stacking</h4>
+<h4 id="introduction-of-stacking">Introduction of Stacking</h4>
+
+<p>The basic idea of stacking is to predict based on the predictions of a series of different models. A two layers stacking generation is showed below:</p>
+
+<center><img src="/Julia-Xu/assets/img/post/stacking.jpg" alt="stacking generation" height="300" width="700" /></center>
+
+<!-- <div class = "blueBorder"> -->
+<ul>
+  <li>First Layer
+    <ul>
+      <li>Split the training set into m parts</li>
+      <li>Fit a model on m-1 parts, and predict on the left one part of train set and the whole test set.</li>
+      <li>Switch and repeat the last step for m times with the same model, then get one prediction of whole training set and m prediction of the test set.</li>
+      <li>Average the m prediction of the test set into one.</li>
+      <li>Repeat all above for each first-layer base model (n). (Get n predictions on the training set and n predictions on the test set.)</li>
+    </ul>
+  </li>
+  <li>Second layer
+    <ul>
+      <li>Use the predictions from first layer to train the second-layer stacking model, then predict on the test set to get the final prediction.
+<!-- </div> --></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="summary-of-some-methods">Summary of Some methods</h4>
+<p><strong><a href="https://arxiv.org/pdf/0911.0460.pdf">Feature-Weighted Linear Stacking</a></strong> is introduced by the second winner team of Netflix competition. It uses linear regression as the 2nd-Layer stacking model and add meta-features into the second layer. The basic idea behind this model is that some model might perform better on part of data. So, adding meta-features can help locate this part.</p>
+
+<p>The standard linear regression learned the constant weight $w_i$ from $b(x) = \Sum_i w_i g_i(x)$. While Feature-Weighted linear stacking modles the weights $w_i$ as a linear function of the meta-features, $w_i(x) = \Sum_j v_{ij}f_j(x)$ ($f_j(x)$ is a meta-feature). Combining the two parts together is actually still a linear regression:</p>
+
+<script type="math/tex; mode=display">b(x) = \Sum_{i,j} v_{ij} f_j(x) g_i(x)</script>
+
+<p>with the M*L features $f_j(x) g_i(x)$.</p>
+
+<h4 id="tips">Tips</h4>
+
+<p><strong>1. The second layer does not work better than one of the base models.</strong>\</p>
+
+<p><strong>To check 1:</strong> Base models’ performance.</p>
+
+<p><strong>To check 2:</strong> Overfitting.</p>
+
+<h4 id="other-resource">Other Resource:</h4>
+<ol>
+  <li><a href="https://mlwave.com/kaggle-ensembling-guide/">Kaggle Ensemble Guide</a> 07/11/2015</li>
+</ol>
+
+<center>
+<h4> To be Continued ...</h4>
+</center>
 
    </article>
 

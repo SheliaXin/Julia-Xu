@@ -1,0 +1,53 @@
+---
+layout: default_post
+title:  "Ensemble Methods - Stacking"
+date:   2017-09-04 12:05:54 +0800
+meta: Review Ensemble Methods - Stacking and several papers, introduce my process of using stacking in Zillow Price Competition, and summarize some tips whiling doing stacking
+categories: Machine Learning
+---
+
+Ensemble methods generally used to combining the predictions of multiple machine learning models. It is widely used in Kaggle and most winners used it in their final models. This post is written when I am learning ensemble methods and using it in [Zillow Price Competition](https://www.kaggle.com/c/zillow-prize-1). It includes several papers' review and some of my understanding.
+
+#### Introduction of Stacking
+
+The basic idea of stacking is to predict based on the predictions of a series of different models. A two layers stacking generation is showed below:
+
+<center><img src="{{site.baseurl}}/assets/img/post/stacking.jpg" alt="stacking generation" height="300" width="700"></center>
+
+<!-- <div class = "blueBorder"> -->
+- First Layer
+  - Split the training set into m parts
+  - Fit a model on m-1 parts, and predict on the left one part of train set and the whole test set.
+  - Switch and repeat the last step for m times with the same model, then get one prediction of whole training set and m prediction of the test set.
+  - Average the m prediction of the test set into one.
+  - Repeat all above for each first-layer base model (n). (Get n predictions on the training set and n predictions on the test set.)
+- Second layer
+  - Use the predictions from first layer to train the second-layer stacking model, then predict on the test set to get the final prediction.
+<!-- </div> -->
+
+#### Summary of Some methods
+**[Feature-Weighted Linear Stacking](https://arxiv.org/pdf/0911.0460.pdf)** is introduced by the second winner team of Netflix competition. It uses linear regression as the 2nd-Layer stacking model and add meta-features into the second layer. The basic idea behind this model is that some model might perform better on part of data. So, adding meta-features can help locate this part.
+
+The standard linear regression learned the constant weight $w_i$ from $b(x) = \Sum_i w_i g_i(x)$. While Feature-Weighted linear stacking modles the weights $w_i$ as a linear function of the meta-features, $w_i(x) = \Sum_j v_{ij}f_j(x)$ ($f_j(x)$ is a meta-feature). Combining the two parts together is actually still a linear regression:
+
+$$ b(x) = \Sum_{i,j} v_{ij} f_j(x) g_i(x)$$
+
+with the M*L features $f_j(x) g_i(x)$.
+
+
+
+#### Tips
+
+**1. The second layer does not work better than one of the base models.**\\
+
+**To check 1:** Base models' performance.
+
+**To check 2:** Overfitting.
+
+
+#### Other Resource:
+1. [Kaggle Ensemble Guide](https://mlwave.com/kaggle-ensembling-guide/) 07/11/2015
+
+<center>
+<h4> To be Continued ...</h4>
+</center>
