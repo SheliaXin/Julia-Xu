@@ -1,22 +1,11 @@
 footer
   @extend %background-image
   background-image: url(../img/#{$logo-path}), url(../img/#{$hero-path})
-
-
-  .postfoot
-    text-align: right
-    padding: 20px 20px 0 0
-
-    a
-      display: inline-block
-      margin-left: 20px
-      color: grey
-
-      &:hover
-        color: rgba(0,0,0,1)
+  background-size: cover
+  +clearfix
 
   .lockup
-    padding: 50px 30px
+    padding: 15px 10px
     +clearfix
 
     .content-wrap

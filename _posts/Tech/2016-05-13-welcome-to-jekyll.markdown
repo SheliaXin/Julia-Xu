@@ -1,5 +1,5 @@
 ---
-layout: post
+#layout: post
 title:  "Welcome to Jekyll!"
 meta: a summary
 date:   2016-05-13 12:05:54 +0800

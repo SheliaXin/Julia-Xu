@@ -1,6 +1,6 @@
 <section class="section-projects">
 
-  <h3 id="projects">Projects</h3>
+  <h6 id="projects">Projects</h6>
 
   <div class="projects-mobile-nav">
     {% for project in site.data.settings.projects %}
@@ -11,15 +11,6 @@
   <div class="projects-belt">
     {% for project in site.data.settings.projects %}
       <div class="project-unit {% if forloop.first %}active-project{% endif %}">
-
-        <figure class="project-face">
-          <img src="assets/img/projects/{{ project.avatar }}" alt="project-face">
-          <figcaption>
-            <strong class="project-name">{{ project.name }}</strong>
-            <em class="project-title">{{ project.title }}</em>
-          </figcaption>
-        </figure>
-
         <div class="project-content">
           {{ project.quote }}
         </div>

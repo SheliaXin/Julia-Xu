@@ -1,19 +1,71 @@
-.header-posts
-  background:
+postheader
+  @extend %background-image
+  height: 270px
+  background: #ccc
     position: 30px 20px, 50% 50%
-    image: url(../img/#{$logo-path}), url(../img/#{$postsbg-path})
-  padding-bottom: 80px
+    image: url(../img/#{$logo-path}), url(../img/#{$hero-path})
+  padding-bottom: 50px
+  +clearfix
 
-.footer-posts
-  background:
-    position: 30px 10px, 50% 50%
-    image: url(../img/#{$logo-path}), url(../img/#{$postsbg-path})
-  padding-bottom: 20px
+  //
+  // .postheader
+  //   a
+  //     color: $blcolor
+  //     margin-top: 10px
+  //     float: right
 
 
+  nav
+    float: right
+    padding: 30px 30px 0 0
+
+    a
+      display: inline-block
+      margin-left: 20px
+
+      color: $blcolor// color: rgba(0,0,0,0.7)
+      @extend %small-bold
+
+      &:hover
+        color: rgba(0,0,0,1)
+
+  // h1
+  //   text-align: center
+  //   font:
+  //     size: 72px
+  //     weight: 700
+  //   color: white
+  //   text-transform: uppercase
+  //   letter-spacing: 0.05em
+  //   margin-bottom: 20px
+  //   clear: both
+  //   padding-top: 100px
+  //
+  // h3
+  //   text-align: right
+  //   padding: 30px 30px 0 0
+  //   font:
+  //     size: 16px
+  //     weight: 700
+  //   color: grey
+  //   margin-bottom: 20px
+  //   clear: both
+  //   padding-top: 50px
+
+    span
+      display: inline-block
+      padding: 0.2em 0.5em
+    //  border: white solid 10px
+
+  .kicker
+    @extend %small-bold
+    text-align: center
+    letter-spacing: 0.05em
+    color: white
+    line-height: 1
 
 @media (max-width: 640px)
-  header
+  postheader
     background:
       position: 50% 20px, 50% 50%
 
@@ -21,5 +73,5 @@
       float: none
       text-align: center
 
-    h3
-      padding-top: 0px
+    // h1
+    //   padding-top: 0px

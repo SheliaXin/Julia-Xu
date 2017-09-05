@@ -24,6 +24,10 @@ h1, h2, h3, h4, h5, h6
   font-size: 26px
   line-height: 1.38
 
+.bigger, h6
+  font-size: 26px
+  line-height: 1.38
+
 .big, h4
   font-size: 22px
   line-height: 1.38
@@ -102,7 +106,13 @@ body
 svg
   +size(100%)
 
-h3
+// h3
+//   @extend %small-bold
+//   color: $accent-light
+//   text-align: center
+//   padding: 100px 0 30px
+
+h6
   @extend %small-bold
   color: $accent-light
   text-align: center
@@ -117,9 +127,15 @@ fieldset
   h3
     padding: 50px 0 50px
 
+  h6
+    padding: 50px 0 50px
+
 section:nth-child(odd)
   background: $bgcolor
   padding-bottom: 100px
 
   h3
+    color: darken($accent-light, 10%)
+
+  h6
     color: darken($accent-light, 10%)

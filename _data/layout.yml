@@ -10,10 +10,17 @@ postsbg: "postsbg.JPG"
 avatar: "Xin.jpg"
 
 # Colors
-accent: "#001A57"
-exaccent: "#5C6D94"
+accent:  "#2a3c48" #"#001A57"
+exaccent:  "#6d8da4" #"#5C6D94"
 
 textColor: "#666"
 headlineColor: "#333"
 bgcolor: "#e5eaee"
 documentBackgroundColor: "#fff"
+
+#bluebrown Color Palette
+brcolor: "#c88b3d"
+blcolor: "#2a3c48"
+blcolor2: "#375366"
+blcolor3: "#6d8da4"
+whcolor: "#eaeaea"
