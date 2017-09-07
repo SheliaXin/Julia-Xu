@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Notes For Deep Learning
+    </title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="/Julia-Xu/assets/css/all.css">
+</head>
+
+
+<body>
+  <header class = "header ">
+
+  <div class = "postheader">
+
+  <nav>
+    <a href="/Julia-Xu">Home</a>
+  </nav>
+</div>
+</header>
+
+
+   <article class="post-content">
+     <h3 class="post-title">Notes For Deep Learning</h3>
+     <p class="post-date">2017-09-04 21:05:54 -0700</p>
+     <h4 id="activation-function-a-non-linear-function">Activation function: A Non-linear function</h4>
+<ul>
+  <li><strong>tanh</strong> function always works better than sigmoid function. tanh ($tanh(z) = \frac{e^z - e^{-z}}{e^z +e^{-z}}$) function is a shifted version of sigmoid, but goes cross (0,0). (Because you might standardized your data to mean 0).</li>
+  <li>When z is very small/large, both sigmoid &amp; tanh has small slope. -&gt; slow down gradient descent. -&gt; <strong>Use RELU</strong> (rectified linear unit) (a = max(0,z)).</li>
+  <li>
+    <p>One disadvantage of RELU is that the derivative is equal to zero when z is negative (In practice, it works just fine. another version is <strong>Leaky ReLu</strong> (a = max(0.01z, z)), often works better, but not used widely).</p>
+  </li>
+  <li><strong>Tips:</strong>
+    <ul>
+      <li>If you are doing binary classification, usually use sigmoid function as output layer.</li>
+      <li>On other layers RELU is often the default choice of activation function.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="tuning-parameters">Tuning Parameters</h4>
+<ul>
+  <li>In deep learning, we usually recommend that you: <small>[From Coursera: Neural Networks and Deep Learning - HW1 ]</small>
+    <ul>
+      <li>Choose the learning rate that better minimizes the cost function.</li>
+      <li>If your model overfits, use other techniques to reduce overfitting.</li>
+    </ul>
+  </li>
+</ul>
+
+   </article>
+
+
+  <footer id="footer">
+
+  <div class="lockup">
+
+    <div class="content-wrap">
+      <nav>
+        
+          <a href="#about-me">About Me</a>
+        
+          <a href="#posts">Blog</a>
+        
+          <a href="#projects">Project</a>
+        
+          <a href="#contact">Contact</a>
+        
+      </nav>
+
+      <p class="copyright">All content copyright 2017</p>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

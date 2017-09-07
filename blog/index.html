@@ -6,7 +6,7 @@ footerClass: footer-posts
 
 <div class="postslist-belt">
 <ul>
-  {% for post in site.posts limit:3 %}
+  {% for post in site.posts limit:5 %}
     <h4><a href = "{{site.baseurl}}{{post.url}}"> {{post.title}}</a></h4>
     <h5><p>{{post.meta}}</p></h5>
   {% endfor %}
