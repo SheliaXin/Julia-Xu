@@ -6,10 +6,15 @@ meta: Summary of Course on Coursera and some useful Tips.
 categories: Machine Learning
 ---
 
-
+#### Neural Network framework:
+1. Initialization of each parameters
+2. Repeat:
+    - Forward propagation (Compute z, a, yPred, loss)
+    - Backward propagation (Compute gradients - dz, da; dw, db), and update parameters (gradient descent) 
 
 #### Activation function: A Non-linear function
-- **tanh** function always works better than sigmoid function. tanh ($tanh(z) = \frac{e^z - e^{-z}}{e^z +e^{-z}}$) function is a shifted version of sigmoid, but goes cross (0,0). (Because you might standardized your data to mean 0).
+- **tanh** function always works better than sigmoid function. tanh ($tanh(z) = \frac{e^z - e^{-z}}{e^z +e^{-z}}$) function is a shifted version of sigmoid, but goes cross (0,0). The mean of its output is closer to zero, and so it centers the data better for the next layer.
+
 - When z is very small/large, both sigmoid & tanh has small slope. -> slow down gradient descent. -> **Use RELU** (rectified linear unit) (a = max(0,z)).
 - One disadvantage of RELU is that the derivative is equal to zero when z is negative (In practice, it works just fine. another version is **Leaky ReLu** (a = max(0.01z, z)), often works better, but not used widely).
 
