@@ -1,3 +1,7 @@
-# Julia's Homepage
+# Xin's Homepage
 
-This site is Julia Xu' Homepage.
+This site is Xin Xu' Homepage. https://sheliaxin.github.io/Julia-Xu/
+
+I am a new-grad from Duke and a problem solver in Data Science.
+I record some Tech reviews and post my thoughts about Machine Learning, Statistics, Predictive Modeling here.
+Welcome to visit and contact with me!

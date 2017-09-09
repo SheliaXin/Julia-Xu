@@ -28,9 +28,9 @@ The basic idea of stacking is to predict based on the predictions of a series of
 #### Summary of Some methods
 **[Feature-Weighted Linear Stacking](https://arxiv.org/pdf/0911.0460.pdf)** is introduced by the second winner team of Netflix competition. It uses linear regression as the 2nd-Layer stacking model and add meta-features into the second layer. The basic idea behind this model is that some model might perform better on part of data. So, adding meta-features can help locate this part.
 
-The standard linear regression learned the constant weight $w_i$ from $b(x) = \Sum_i w_i g_i(x)$. While Feature-Weighted linear stacking modles the weights $w_i$ as a linear function of the meta-features, $w_i(x) = \Sum_j v_{ij}f_j(x)$ ($f_j(x)$ is a meta-feature). Combining the two parts together is actually still a linear regression:
+The standard linear regression learned the constant weight $w_i$ from $b(x) = \sum_i w_i g_i(x)$. While Feature-Weighted linear stacking modles the weights $w_i$ as a linear function of the meta-features, $w_i(x) = \sum_j v_{ij}f_j(x)$ ($f_j(x)$ is a meta-feature). Combining the two parts together is actually still a linear regression:
 
-$$ b(x) = \Sum_{i,j} v_{ij} f_j(x) g_i(x)$$
+$$ b(x) = \sum_{i,j} v_{ij} f_j(x) g_i(x)$$
 
 with the M*L features $f_j(x) g_i(x)$.
 

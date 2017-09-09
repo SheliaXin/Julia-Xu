@@ -8,6 +8,12 @@
     </title>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="/Julia-Xu/assets/css/all.css">
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 
 
@@ -17,7 +23,7 @@
   <div class = "postheader">
 
   <nav>
-    <a href="/Julia-Xu">Home</a>
+    <a href="/Julia-Xu/">Home</a>
   </nav>
 </div>
 </header>
@@ -26,9 +32,22 @@
    <article class="post-content">
      <h3 class="post-title">Notes For Deep Learning</h3>
      <p class="post-date">2017-09-04 21:05:54 -0700</p>
-     <h4 id="activation-function-a-non-linear-function">Activation function: A Non-linear function</h4>
+     <h4 id="neural-network-framework">Neural Network framework:</h4>
+<ol>
+  <li>Initialization of each parameters</li>
+  <li>Repeat:
+    <ul>
+      <li>Forward propagation (Compute z, a, yPred, loss)</li>
+      <li>Backward propagation (Compute gradients - dz, da; dw, db), and update parameters (gradient descent)</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="activation-function-a-non-linear-function">Activation function: A Non-linear function</h4>
 <ul>
-  <li><strong>tanh</strong> function always works better than sigmoid function. tanh ($tanh(z) = \frac{e^z - e^{-z}}{e^z +e^{-z}}$) function is a shifted version of sigmoid, but goes cross (0,0). (Because you might standardized your data to mean 0).</li>
+  <li>
+    <p><strong>tanh</strong> function always works better than sigmoid function. tanh ( $tanh(z) = \frac{e^z - e^{-z}}{e^z +e^{-z}}$ ) function is a shifted version of sigmoid, but goes cross (0,0). The mean of its output is closer to zero, and so it centers the data better for the next layer.</p>
+  </li>
   <li>When z is very small/large, both sigmoid &amp; tanh has small slope. -&gt; slow down gradient descent. -&gt; <strong>Use RELU</strong> (rectified linear unit) (a = max(0,z)).</li>
   <li>
     <p>One disadvantage of RELU is that the derivative is equal to zero when z is negative (In practice, it works just fine. another version is <strong>Leaky ReLu</strong> (a = max(0.01z, z)), often works better, but not used widely).</p>
