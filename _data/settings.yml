@@ -21,8 +21,8 @@ menu:
 
 seo:
   description: 'This is Xin Xu Homepage. I am a new-grad from Duke and a problem solver in Data Science. I record some Tech reviews and post my thoughts about Machine Learning, Statistics, Predictive Modeling here. Welcome to visit and contact with me.'
-  rel-author: 'https://sheliaxin.github.io/Julia-Xu/'
-  rel-publisher: 'https://sheliaxin.github.io/Julia-Xu/'
+  rel-author: 'https://sheliaxin.github.io/Xin-Xu-Homepage/'
+  rel-publisher: 'https://sheliaxin.github.io/Xin-Xu-Homepage/'
 
 #-------------------------------
 # Google Analytics Section
@@ -72,10 +72,7 @@ projects:
   investment strategy, HMM model has a more stable and better pay-offs than
   traditional time series models.</p>',
   logo: 'stock.png'}
-- {quote: '<p><strong>Working with Travis was the highlight of my career.</strong>
- Other moments of note were collecting the largest number of paperclips in the
- office, and winning a trophy for saying "uh huh, and then what?" 30 times in a
- row to my girlfriend without her noticing.</p>',
+- {quote: '<p><strong>.</p>',
   logo: 'reddit.png'}
 
 #-------------------------------
