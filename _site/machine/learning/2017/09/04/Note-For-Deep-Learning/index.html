@@ -7,7 +7,7 @@
     Notes For Deep Learning
     </title>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700" rel="stylesheet">
-  <link rel="stylesheet" href="/Julia-Xu/assets/css/all.css">
+  <link rel="stylesheet" href="/Xin-Xu-Homepage/assets/css/all.css">
   <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -23,7 +23,7 @@ MathJax.Hub.Config({
   <div class = "postheader">
 
   <nav>
-    <a href="/Julia-Xu/">Home</a>
+    <a href="/Xin-Xu-Homepage/">Home</a>
   </nav>
 </div>
 </header>
@@ -43,22 +43,58 @@ MathJax.Hub.Config({
   </li>
 </ol>
 
-<h4 id="activation-function-a-non-linear-function">Activation function: A Non-linear function</h4>
+<p><strong>Tips:</strong></p>
+
 <ul>
+  <li>
+    <p>If all $W^{[l]} &lt;1$ or $W^{[l]} &gt;1$ even slightly, the gradients will vanish/explode. We can reduce this problem by controlling the variance of $w$ during the initialization. For sigmoid, set $Var(w_i) = \frac{1}{n}$. For ReLu, set $Var(w_i) = \frac{2}{n}$. For tanh, set  $Var(w_i) =\sqrt{\frac{1}{n^{[l-1]}}} $ or $\sqrt{\frac{2}{n^{[l-1]} + n^{[l]}}}$.</p>
+  </li>
+  <li>
+    <p>Use <a href="http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/">Gradient Checking</a> to debug. (See Details Course2 Week1)</p>
+  </li>
+</ul>
+
+<h4 id="activation-function-a-non-linear-function">Activation function: A Non-linear function</h4>
+<ol>
   <li>
     <p><strong>tanh</strong> function always works better than sigmoid function. tanh ( $tanh(z) = \frac{e^z - e^{-z}}{e^z +e^{-z}}$ ) function is a shifted version of sigmoid, but goes cross (0,0). The mean of its output is closer to zero, and so it centers the data better for the next layer.</p>
   </li>
-  <li>When z is very small/large, both sigmoid &amp; tanh has small slope. -&gt; slow down gradient descent. -&gt; <strong>Use RELU</strong> (rectified linear unit) (a = max(0,z)).</li>
+  <li>
+    <p>When z is very small/large, both sigmoid &amp; tanh has small slope. -&gt; slow down gradient descent. -&gt; <strong>Use RELU</strong> (rectified linear unit) (a = max(0,z)).</p>
+  </li>
   <li>
     <p>One disadvantage of RELU is that the derivative is equal to zero when z is negative (In practice, it works just fine. another version is <strong>Leaky ReLu</strong> (a = max(0.01z, z)), often works better, but not used widely).</p>
   </li>
-  <li><strong>Tips:</strong>
-    <ul>
-      <li>If you are doing binary classification, usually use sigmoid function as output layer.</li>
-      <li>On other layers RELU is often the default choice of activation function.</li>
-    </ul>
-  </li>
+</ol>
+
+<p><strong>Tips:</strong></p>
+
+<ul>
+  <li>If you are doing binary classification, usually use sigmoid function as output layer.</li>
+  <li>On other layers RELU is often the default choice of activation function.</li>
 </ul>
+
+<h4 id="regularization-of-neural-network">Regularization of Neural Network</h4>
+
+<p>Regularization is usually used to reduce overfitting.</p>
+
+<ol>
+  <li>Regularization with Frobenius Norm (weight decay), The cost function will be:</li>
+</ol>
+
+<script type="math/tex; mode=display">J(w^{[1]}, b^{[1]}, \dots, w^{[L]}) = \frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)}) + \frac{\lambda}{2m} \sum_{l=1}^{L} \sum_{l=1}^{L} ||w^{[l]}||^2_{F}</script>
+
+<p>where,
+<script type="math/tex">||w^{[l]}||^2_{F} = \sum_{i=1}^{n^{[l-1]}} \sum_{j=1}^{n^{[l]}} (w_{ij}^{[l]})^2</script>.</p>
+
+<ol>
+  <li>
+    <p>Dropout Regularization: Go through each layer of the Neural Network, randomly eliminate the nodes with a given probability. [!$a^[i]$ need to be updated by dividing the probability, to keep the expected value; Dropout only implemented on training set, not testing set.]</p>
+  </li>
+  <li>
+    <p>Other methods: Data augmentation, Early stopping.</p>
+  </li>
+</ol>
 
 <h4 id="tuning-parameters">Tuning Parameters</h4>
 <ul>
