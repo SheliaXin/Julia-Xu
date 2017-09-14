@@ -32,7 +32,7 @@ MathJax.Hub.Config({
    <article class="post-content">
      <h3 class="post-title">Notes For Deep Learning</h3>
      <p class="post-date">2017-09-04 21:05:54 -0700</p>
-     <h4 id="neural-network-framework">Neural Network framework:</h4>
+     <h4 id="neural-network-framework">1 Neural Network framework:</h4>
 <ol>
   <li>Initialization of each parameters</li>
   <li>Repeat:
@@ -46,25 +46,16 @@ MathJax.Hub.Config({
 <p><strong>Tips:</strong></p>
 
 <ul>
-  <li>
-    <p>If all $W^{[l]} &lt;1$ or $W^{[l]} &gt;1$ even slightly, the gradients will vanish/explode. We can reduce this problem by controlling the variance of $w$ during the initialization. For sigmoid, set $Var(w_i) = \frac{1}{n}$. For ReLu, set $Var(w_i) = \frac{2}{n}$. For tanh, set  $Var(w_i) =\sqrt{\frac{1}{n^{[l-1]}}} $ or $\sqrt{\frac{2}{n^{[l-1]} + n^{[l]}}}$.</p>
-  </li>
-  <li>
-    <p>Use <a href="http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/">Gradient Checking</a> to debug. (See Details Course2 Week1)</p>
-  </li>
+  <li>The weights $W^{[l]}$ should be initialized randomly to break symmetry.</li>
+  <li>If all $W^{[l]} &lt;1$ or $W^{[l]} &gt;1$ even slightly, the gradients will vanish/explode. We can reduce this problem by controlling the variance of $w$ during the initialization. For sigmoid, set $Var(w_i) = \frac{1}{n}$. For ReLu, set $Var(w_i) = \frac{2}{n^{[l-1]}}$ (He Initialization). For tanh, set  $Var(w_i) =\sqrt{\frac{1}{n^{[l-1]}}} $ or $\sqrt{\frac{2}{n^{[l-1]} + n^{[l]}}}$.</li>
+  <li>Use <a href="http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/">Gradient Checking</a> to debug. (See Details Course2 Week1)</li>
 </ul>
 
 <h4 id="activation-function-a-non-linear-function">Activation function: A Non-linear function</h4>
 <ol>
-  <li>
-    <p><strong>tanh</strong> function always works better than sigmoid function. tanh ( $tanh(z) = \frac{e^z - e^{-z}}{e^z +e^{-z}}$ ) function is a shifted version of sigmoid, but goes cross (0,0). The mean of its output is closer to zero, and so it centers the data better for the next layer.</p>
-  </li>
-  <li>
-    <p>When z is very small/large, both sigmoid &amp; tanh has small slope. -&gt; slow down gradient descent. -&gt; <strong>Use RELU</strong> (rectified linear unit) (a = max(0,z)).</p>
-  </li>
-  <li>
-    <p>One disadvantage of RELU is that the derivative is equal to zero when z is negative (In practice, it works just fine. another version is <strong>Leaky ReLu</strong> (a = max(0.01z, z)), often works better, but not used widely).</p>
-  </li>
+  <li><strong>tanh</strong> function always works better than sigmoid function. tanh ( $tanh(z) = \frac{e^z - e^{-z}}{e^z +e^{-z}}$ ) function is a shifted version of sigmoid, but goes cross (0,0). The mean of its output is closer to zero, and so it centers the data better for the next layer.</li>
+  <li>When z is very small/large, both sigmoid &amp; tanh has small slope. -&gt; slow down gradient descent. -&gt; <strong>Use RELU</strong> (rectified linear unit) (a = max(0,z)).</li>
+  <li>One disadvantage of RELU is that the derivative is equal to zero when z is negative (In practice, it works just fine. another version is <strong>Leaky ReLu</strong> (a = max(0.01z, z)), often works better, but not used widely).</li>
 </ol>
 
 <p><strong>Tips:</strong></p>
@@ -78,23 +69,30 @@ MathJax.Hub.Config({
 
 <p>Regularization is usually used to reduce overfitting.</p>
 
-<ol>
-  <li>Regularization with Frobenius Norm (weight decay), The cost function will be:</li>
-</ol>
+<ul>
+  <li>L2-regularization (with Frobenius Norm, also known as “weight decay”). Its cost function will be:</li>
+</ul>
 
 <script type="math/tex; mode=display">J(w^{[1]}, b^{[1]}, \dots, w^{[L]}) = \frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)}) + \frac{\lambda}{2m} \sum_{l=1}^{L} \sum_{l=1}^{L} ||w^{[l]}||^2_{F}</script>
 
-<p>where,
-<script type="math/tex">||w^{[l]}||^2_{F} = \sum_{i=1}^{n^{[l-1]}} \sum_{j=1}^{n^{[l]}} (w_{ij}^{[l]})^2</script>.</p>
+<blockquote>
+  <p>where,</p>
+</blockquote>
 
-<ol>
+<script type="math/tex; mode=display">||w^{[l]}||^2_{F} = \sum_{i=1}^{n^{[l-1]}} \sum_{j=1}^{n^{[l]}} (w_{ij}^{[l]})^2</script>
+
+<blockquote>
+  <p>By penalizing the square values of the weights in the cost function, it drives all the weights to smaller values. This leads to a smoother model in which the output changes more slowly as the input changes.</p>
+</blockquote>
+
+<ul>
   <li>
-    <p>Dropout Regularization: Go through each layer of the Neural Network, randomly eliminate the nodes with a given probability. [!$a^[i]$ need to be updated by dividing the probability, to keep the expected value; Dropout only implemented on training set, not testing set.]</p>
+    <p>Dropout Regularization: Go through each layer of the Neural Network, randomly eliminate the nodes with a given probability. <tip>[!$a^[i]$ need to be updated by dividing the probability, to keep the expected value; Dropout only implemented on training set, not testing set.]</tip> The idea behind drop-out is that at each iteration, you train a different model that uses only a subset of your neurons. With dropout, your neurons thus become less sensitive to the activation of one other specific neuron, because that other neuron might be shut down at any time.</p>
   </li>
   <li>
     <p>Other methods: Data augmentation, Early stopping.</p>
   </li>
-</ol>
+</ul>
 
 <h4 id="tuning-parameters">Tuning Parameters</h4>
 <ul>
