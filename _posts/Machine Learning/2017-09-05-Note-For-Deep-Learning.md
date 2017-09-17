@@ -40,24 +40,25 @@ categories: Machine Learning
 
 Because mini-batch gradient descent makes a parameter update after seeing just a subset of examples, the direction of the update has some variance, and so the path taken by mini-batch gradient descent will "oscillate" toward convergence. Using **momentum** can reduce these oscillations. Momentum takes into account the past gradients to smooth out the update. We will store the 'direction' of the previous gradients in the variable $v$. Formally, this will be the exponentially weighted average of the gradient on previous steps.
 
-
 $$ \begin{cases}
 v_{dW^{[l]}} = \beta v_{dW^{[l]}} + (1 - \beta) dW^{[l]} \\
 W^{[l]} = W^{[l]} - \alpha v_{dW^{[l]}}
-\end{cases}\tag{3}$$
+\end{cases}$$
+
+where L is the number of layers, $\beta$ is the momentum and $\alpha$ is the learning rate. The larger the momentum $\beta$ is, the smoother the update because the more we take the past gradients into account. But if $\beta$ is too big, it could also smooth out the updates too much. Common values for $\beta$ range from 0.8 to 0.999 (default 0.9). In some place, people might ignore $(1-\beta)$. In that case, need to tune $\beta$ and $\alpha$ together.
+
+**Adam optimization algorithm** combine momentum and RMSprop (root mean square prop) together.
+
 
 $$\begin{cases}
-v_{db^{[l]}} = \beta v_{db^{[l]}} + (1 - \beta) db^{[l]} \\
-b^{[l]} = b^{[l]} - \alpha v_{db^{[l]}}
-\end{cases}\tag{4}$$
+v_{dW^{[l]}} = \beta_1 v_{dW^{[l]}} + (1 - \beta_1) \frac{\partial \mathcal{J} }{ \partial W^{[l]} } \\
+v^{corrected}_{dW^{[l]}} = \frac{v_{dW^{[l]}}}{1 - (\beta_1)^t} \\
+s_{dW^{[l]}} = \beta_2 s_{dW^{[l]}} + (1 - \beta_2) (\frac{\partial \mathcal{J} }{\partial W^{[l]} })^2 \\
+s^{corrected}_{dW^{[l]}} = \frac{s_{dW^{[l]}}}{1 - (\beta_1)^t} \\
+W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{dW^{[l]}}} + \varepsilon}
+\end{cases}$$
 
-
-
-Two techs to speed up Gradient Descent:
-- Gradient Descent with **momentum**
-- **RMSprop** (root mean square prop)
-(**Adam optimization algorithm** combine momentum and RMSprop together.)
-- Learning rate decay.
+where t counts the number of steps taken of Adam, L is the number of layers,  $\beta_1$ and $\beta_2$ are hyperparameters that control the two exponentially weighted averages, $\alpha$ is the learning rate, $\varepsilon$ is a very small number to avoid dividing by zero.
 
 
 
