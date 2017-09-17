@@ -32,7 +32,7 @@ MathJax.Hub.Config({
    <article class="post-content">
      <h3 class="post-title">Ensemble Methods - Stacking</h3>
      <p class="post-date">2017-09-03 21:05:54 -0700</p>
-     <p>Ensemble methods generally used to combining the predictions of multiple machine learning models. It is widely used in Kaggle and most winners used it in their final models. This post is written when I am learning ensemble methods and using it in <a href="https://www.kaggle.com/c/zillow-prize-1">Zillow Price Competition</a>. It includes several papers’ review and some of my understanding.</p>
+     <p>Every model has different advantages and disadvantages. Based on the principle that no model is perfect, ensemble methods learn and combine the prediction of each model to increase accuracy. It is widely used in Kaggle and most winners used it in their final models. This post is written when I am learning ensemble methods and using it in <a href="https://www.kaggle.com/c/zillow-prize-1">Zillow Price Competition</a>. It includes several papers’ review and some of my understanding.</p>
 
 <h4 id="introduction-of-stacking">Introduction of Stacking</h4>
 
@@ -68,7 +68,7 @@ MathJax.Hub.Config({
 
 <p>with the M*L features $f_j(x) g_i(x)$.</p>
 
-<p><strong><a href="https://github.com/kaz-Anova/StackNet#install-lightgbm">StackNet</a></strong> is a stacking framework implemented with a software in JAVA. The developer <a href="https://www.kaggle.com/kazanova">Μαριος Μιχαηλιδης KazAnova</a> ranked top3 on Kaggle and got many top rank using this framework.</p>
+<p><strong><a href="https://github.com/kaz-Anova/StackNet#install-lightgbm">StackNet</a></strong> is a stacking framework implemented with a software in JAVA. The developer <a href="https://www.kaggle.com/kazanova">Μαριος Μιχαηλιδης KazAnova</a> ranked top3 on Kaggle and got many top rank using this framework. It resembles a feedforward neural network and uses Wolpert’s stacked generalization in each levels.</p>
 
 <h4 id="tips">Tips</h4>
 

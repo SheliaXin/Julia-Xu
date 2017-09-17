@@ -6,7 +6,7 @@ meta: Review Ensemble Methods - Stacking and several papers, introduce my proces
 categories: Machine Learning
 ---
 
-Ensemble methods generally used to combining the predictions of multiple machine learning models. It is widely used in Kaggle and most winners used it in their final models. This post is written when I am learning ensemble methods and using it in [Zillow Price Competition](https://www.kaggle.com/c/zillow-prize-1). It includes several papers' review and some of my understanding.
+Every model has different advantages and disadvantages. Based on the principle that no model is perfect, ensemble methods learn and combine the prediction of each model to increase accuracy. It is widely used in Kaggle and most winners used it in their final models. This post is written when I am learning ensemble methods and using it in [Zillow Price Competition](https://www.kaggle.com/c/zillow-prize-1). It includes several papers' review and some of my understanding.
 
 #### Introduction of Stacking
 
@@ -34,7 +34,7 @@ $$ b(x) = \sum_{i,j} v_{ij} f_j(x) g_i(x)$$
 
 with the M*L features $f_j(x) g_i(x)$.
 
-**[StackNet](https://github.com/kaz-Anova/StackNet#install-lightgbm)** is a stacking framework implemented with a software in JAVA. The developer [Μαριος Μιχαηλιδης KazAnova](https://www.kaggle.com/kazanova) ranked top3 on Kaggle and got many top rank using this framework.
+**[StackNet](https://github.com/kaz-Anova/StackNet#install-lightgbm)** is a stacking framework implemented with a software in JAVA. The developer [Μαριος Μιχαηλιδης KazAnova](https://www.kaggle.com/kazanova) ranked top3 on Kaggle and got many top rank using this framework. It resembles a feedforward neural network and uses Wolpert's stacked generalization in each levels.
 
 
 #### Tips
